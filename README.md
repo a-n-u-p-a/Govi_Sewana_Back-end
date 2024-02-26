@@ -12,9 +12,11 @@ Django project cmd commands
 pip install virtualenv
 
 
+
 2. Create the virtual environment - (Whatever libraries we use in the project, they are stored in this virtual environment) / ** (This "venv" name, you can add any name)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 virtualenv venv  
+
 
 
 3. Activate the virtual environment (For Windows OS)
