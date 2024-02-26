@@ -31,23 +31,9 @@ pip install django
 
 5. Open the Visual Studio code - (Code Editor Software) / ** (This "." means the current directory)
 ---------------------------------------------------------------------------------------------------
-code .  
+code .    
 
 
-6. Create a Django Project - ** (To this "gfg" project name, you can add any name)
-----------------------------------------------------------------------------------
-django-admin startproject gfg  
-
-
-7. Create a Django App - ** (To this "authentication" app name, you can add any name)
--------------------------------------------------------------------------------------
-python manage.py startapp authentication  
-
-
-
-The code below is a few steps ahead.
-------------------------------------
-
-1. Running the local server
+6. Running the local server
 ---------------------------
 python manage.py runserver
