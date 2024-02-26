@@ -46,6 +46,6 @@ python manage.py startapp authentication
 **** The code below is a few steps ahead. ****
 ----------------------------------------------
 
-Running the local server
-------------------------
+1. Running the local server
+---------------------------
 python manage.py runserver
