@@ -8,14 +8,14 @@ Django project cmd commands
 
 
 1. Install a virtual environment
-
-pip install virtualenv
 --------------------------------
+pip install virtualenv
+
 
 2. Create the virtual environment - (Whatever libraries we use in the project, they are stored in this virtual environment) / ** (This "venv" name, you can add any name)
-
-virtualenv venv  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+virtualenv venv  
+
 
 3. Activate the virtual environment (For Windows OS)
 ----------------------------------------------------
@@ -43,8 +43,8 @@ python manage.py startapp authentication
 
 
 
-**** The code below is a few steps ahead. ****
-----------------------------------------------
+The code below is a few steps ahead.
+------------------------------------
 
 1. Running the local server
 ---------------------------
