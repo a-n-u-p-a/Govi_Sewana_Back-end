@@ -1,57 +1,41 @@
 # Govi_Sewana_Back-end
 
 
-# Created by dev_dasun
+Created by dev_dasun
 Django project cmd commands
-===========================
 
 1. Install a virtual environment
 --------------------------------
 pip install virtualenv
 
-
-2. Create the virtual environment - (Whatever libraries we use in the project, they are stored in this virtual environment)
---------------------------------------------------------------------------------------------------------------------------
+2. Create the virtual environment - (Whatever libraries we use in the project, they are stored in this virtual environment) / ** (This "venv" name, you can add any name)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 virtualenv venv  
-
-** (This "venv" name, you can add any name)
-
 
 3. Activate the virtual environment (For Windows OS)
 ----------------------------------------------------
 venv\Scripts\activate
 
-
 4. Install Django
 -----------------
 pip install django
 
-
-5. Open the Visual Studio code - (Code Editor Software)
--------------------------------------------------------
+5. Open the Visual Studio code - (Code Editor Software) / ** (This "." means the current directory)
+---------------------------------------------------------------------------------------------------
 code .  
 
-** (This "." means the current directory)
-
-
-6. Create a Django Project
---------------------------------
+6. Create a Django Project - ** (To this "gfg" project name, you can add any name)
+----------------------------------------------------------------------------------
 django-admin startproject gfg  
 
-** (To this "gfg" project name, you can add any name)
-
-
-7. Create a Django App
-----------------------
+7. Create a Django App - ** (To this "authentication" app name, you can add any name)
+-------------------------------------------------------------------------------------
 python manage.py startapp authentication  
 
-** (To this "authentication" app name, you can add any name)
 
 
-
- ------------------------------------------------
-| **** The code below is a few steps ahead. **** |
- ------------------------------------------------
+**** The code below is a few steps ahead. ****
+----------------------------------------------
 
 Running the local server
 ------------------------
