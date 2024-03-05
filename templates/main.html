@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+</head>
+<body>
+    <h1>Crop Yield Prediction</h1>
+    <br>
+    <hr>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        Crop type : <input type="text" name="crop_type" required> <br>
+        Crop Extent : <input type="number" name="crop_extent" required> <br>
+        Cultivation Date : <input type="date" name="date" required> <br>
+        Temperature : <input type="number" name="temperature" required> <br>
+        Daylight(s) : <input type="number" name="daylight" required> <br>
+        Sunshine(s) : <input type="number" name="sunshine" required> <br>
+        Rain_sum (mm) : <input type="number" name="rain_sum" required> <br>
+        Precipitation_hours (h) : <input type="number" name="precipitation_hours" required> <br>
+        Shortwave_radiation_sum (MJ/m²) : <input type="number" name="shortwave_radiation_sum" required> <br>
+        Evapotranspiration (mm) : <input type="number" name="evapotranspiration" required> <br>
+        
+        <input type="submit" value="Predic the Yield">
+
+        {% if result %}
+            <h1> Predicted Yield : {{result}} </h1>
+        {% endif %}
+
+    </form>
+
+    
+</body>
+</html>
