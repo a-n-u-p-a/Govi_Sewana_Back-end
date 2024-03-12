@@ -49,36 +49,31 @@ def send_otp(request):
             .verifications \
             .create(to=phone_number, channel='sms')
         print(verification.status)
-        print(phone_number)
-        return render(request, 'verify_otp.html', {'phone_number': phone_number})
+        request.session['phone_number'] = phone_number  # Store in session
+        return redirect('verify_otp') 
     return render(request, 'send_otp.html')
 
 def verify_otp(request):
     if request.method == "POST":
-        phone_number = request.POST.get('phone_number')
+        phone_number = request.session.get('phone_number') 
         otp = request.POST.get('otp')
 
-        print(phone_number)
-
-        print(otp)
-
-        # logger.debug(f"Phone Number: {phone_number}")
-        # logger.debug(f"OTP: {otp}")
-
-        client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
         verification_check = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
-                                    .verification_checks \
-                                    .create(to=phone_number, code=otp)
+            .verification_checks \
+            .create(to=phone_number, code=otp)
 
         if verification_check.status == "approved":
-            # Handle successful login 
-            # ... your login logic here ...
-            messages.success(request, "Verification successful!")  # Add success message 
-            return redirect('dashboard.html')
+            # --- Handle User Login ---
+            # Replace this placeholder with your user login logic
+            # e.g., request.session['user_id'] = ... 
+            return redirect('dashboard') 
 
-        else:  
-            messages.error(request, "Verification failed.")  # Add error message
-            return render(request, 'verify_otp.html', {'phone_number': phone_number})
-        
-    return render(request, 'send_otp.html')
+        else:
+            return render(request, 'verify_otp.html')
+
+    return render(request, 'verify_otp.html') 
+
+def dashboard(request):  # Changed to take 'request'
+    return render(request, 'dashboard.html')
+
 
