@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="otp">Enter the OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+        <input type="hidden" name="phone_number" value="{{ phone_number }}">
+        <button type="submit">Verify OTP</button>
+    </form>
+</body>
+</html>
