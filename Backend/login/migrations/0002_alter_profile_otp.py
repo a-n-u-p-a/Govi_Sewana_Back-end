@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('govisewana_login', '0001_initial'),
+        ('login', '0001_initial'),
     ]
 
     operations = [

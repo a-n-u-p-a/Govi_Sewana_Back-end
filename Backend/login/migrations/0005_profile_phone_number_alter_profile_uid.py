@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('govisewana_login', '0004_alter_profile_uid'),
+        ('login', '0004_alter_profile_uid'),
     ]
 
     operations = [
