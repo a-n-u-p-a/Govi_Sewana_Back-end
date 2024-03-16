@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'yieldPrediction'
-    'userLogin',
+    'yieldPrediction',
+    'govisewana_login',
 ]
 
 MIDDLEWARE = [
