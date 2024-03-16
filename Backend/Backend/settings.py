@@ -78,7 +78,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Backend.wsgi.application'
 
+
 TESTING_MODE = True  # Or set this to an environment variable
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -90,9 +92,11 @@ DATABASES = {
     }
 }
 
+
 TWILIO_ACCOUNT_SID = 'ACe840552748ca0a1155df212e41305801'
 TWILIO_AUTH_TOKEN = '315ae331a642b88c8d7324ab1e639369'
 TWILIO_VERIFY_SERVICE_ID = 'VA95053ab477aa2d86dc1b2284ed0f1925'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
