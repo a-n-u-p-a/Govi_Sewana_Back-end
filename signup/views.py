@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.conf import settings
 from twilio.rest import Client
@@ -16,6 +17,16 @@ from twilio.rest import Client
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+=======
+from django.shortcuts import render
+
+# Create your views here.
+from django.conf import settings
+from twilio.rest import Client
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+>>>>>>> 7ef29c090b6300e9d7ec70a747fd81796baea790
 
 client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
 
@@ -52,4 +63,8 @@ def verify_otp(request):
 
         # if verification_check.status == "approved":
         if settings.TESTING_MODE:
+<<<<<<< HEAD
           return Response({"success": True})
+=======
+          return Response({"success": True})
+>>>>>>> 7ef29c090b6300e9d7ec70a747fd81796baea790
