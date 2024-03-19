@@ -14,7 +14,21 @@ def register_details(request):
     full_name = registration_data.get("Full-Name")
     nic = registration_data.get("NIC")
     phone_number = registration_data.get("Mobile-Number")
-    
+
+    print(user_collection.find_one())
+    # Check if a user with the given mobile number already exists
+    existing_number = user_collection.find_one({"Mobile-Number": phone_number})
+    existing_nic = user_collection.find_one({"NIC": nic})
+    if existing_number and existing_nic:
+      print('user already exists')
+      # If a user exists, return a response indicating the user is already registered
+      return Response(status=409)
+    elif existing_number or existing_nic:
+      print('user already exists')
+      # If a user exists, return a response indicating the user is already registered
+      return Response(status=409)
+
+
     # If no existing user is found, insert the new user
     user_collection.insert_one(registration_data)
 

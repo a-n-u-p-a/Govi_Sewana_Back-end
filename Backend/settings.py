@@ -79,7 +79,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Backend.wsgi.application'
 
 
-TESTING_MODE = True  # Or set this to an environment variable
+TESTING_MODE = False  # Or set this to an environment variable
 
 
 # Database
