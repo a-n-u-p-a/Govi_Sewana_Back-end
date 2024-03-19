@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class YieldpredictionConfig(AppConfig):
+class SignupConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'yieldPrediction'
+    name = 'signup'

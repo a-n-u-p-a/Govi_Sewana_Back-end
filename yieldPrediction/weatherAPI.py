@@ -64,4 +64,3 @@ def processWeatherData():
     daily_dataframe["et0_fao_evapotranspiration (mm)"].mean()
     ]
     return data
-
