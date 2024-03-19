@@ -1,32 +1,9 @@
-<<<<<<< HEAD
-from django.shortcuts import render, redirect
-from django.conf import settings
-from twilio.rest import Client
-from django.http import HttpResponse
-import logging
-logger = logging.getLogger(__name__) 
-
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-
-client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
-
-from django.shortcuts import render, redirect
-from django.conf import settings
-from twilio.rest import Client
-from django.http import HttpResponse
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-=======
-from django.shortcuts import render
-
-# Create your views here.
 from django.conf import settings
 from twilio.rest import Client
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from .models import user_collection
 
->>>>>>> 7ef29c090b6300e9d7ec70a747fd81796baea790
 
 client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
 
@@ -37,16 +14,20 @@ def register_details(request):
     full_name = registration_data.get("Full-Name")
     nic = registration_data.get("NIC")
     phone_number = registration_data.get("Mobile-Number")
+    
+    # If no existing user is found, insert the new user
+    user_collection.insert_one(registration_data)
+
     print(full_name)
     print(nic)
     print(phone_number)
+    # user_collection.insert_one(registration_data)
     # verification = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
     #     .verifications \
     #     .create(to=phone_number, channel='sms')
-    if settings.TESTING_MODE:
-       return Response({"success": True})
+    return Response(status=200)  
 
-# ... (Rest of your verify_otp and dashboard views) 
+
 
 @api_view(['POST'])
 def verify_otp(request):
@@ -62,9 +43,4 @@ def verify_otp(request):
         #     .create(to=phone_number, code=otp)
 
         # if verification_check.status == "approved":
-        if settings.TESTING_MODE:
-<<<<<<< HEAD
-          return Response({"success": True})
-=======
-          return Response({"success": True})
->>>>>>> 7ef29c090b6300e9d7ec70a747fd81796baea790
+    return Response(status=200)
