@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 aiohttp==3.9.3
 aiohttp-retry==2.8.3
 aiosignal==1.3.1
@@ -46,3 +47,14 @@ yarl==1.9.4
 tzdata==2024.1
 url-normalize==1.4.3
 urllib3==2.2.1
+=======
+asgiref==3.7.2
+Django==5.0.2
+joblib==1.3.2
+numpy==1.26.4
+scikit-learn==1.4.1.post1
+scipy==1.12.0
+sqlparse==0.4.4
+threadpoolctl==3.3.0
+tzdata==2024.1
+>>>>>>> 385e3dce0edacb6e9477ceb06e128733ae21d8d9

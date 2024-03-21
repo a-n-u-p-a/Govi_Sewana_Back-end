@@ -6,7 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Backend.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'govisevanaML.settings')
+>>>>>>> 385e3dce0edacb6e9477ceb06e128733ae21d8d9
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
