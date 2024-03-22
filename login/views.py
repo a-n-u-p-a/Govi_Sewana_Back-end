@@ -38,17 +38,16 @@ def send_otp(request):
 
 @api_view(['POST'])
 def verify_otp(request):
-    if request.method == "POST":
-        otp_data = request.data
-        phone_number = request.session.get('phone_number')
-        print('inside') 
-        print(phone_number)
-        otp = otp_data.get('Entered-Otp')
-        print(otp)
-        # verification_check = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
-        #     .verification_checks \
-        #     .create(to=phone_number, code=otp)
+  if request.method == "POST":
+    otp_data = request.data
+    phone_number = otp_data.get("Mobile_Number")
+    print('inside') 
+    print(phone_number)
+    otp = otp_data.get('Entered_Otp')
+    print(otp)
+    # verification_check = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
+    #     .verification_checks \
+    #     .create(to=phone_number, code=otp)
 
-        # if verification_check.status == "approved":
-        if settings.TESTING_MODE:
-          return Response({"success": True})
+    # if verification_check.status == "approved":
+    return Response(status=200)
