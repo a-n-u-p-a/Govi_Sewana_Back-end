@@ -22,4 +22,5 @@ urlpatterns = [
     path('signup/', include('signup.urls')),
     path('yieldPrediction/', include('yieldPrediction.urls')),
     path('login/', include('login.urls')),
+    path('cropRecommendation/', include('cropRecommendation.urls')),
 ]

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'yieldPrediction',
     'login',
     'signup',
+    'cropRecommendation',
 ]
 
 MIDDLEWARE = [
