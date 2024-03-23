@@ -11,7 +11,6 @@ client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
 def register_details(request):
   if request.method == "POST":
     registration_data = request.data
-    full_name = registration_data.get("Full_Name")
     nic = registration_data.get("NIC")
     phone_number = registration_data.get("Mobile_Number")
 
@@ -26,29 +25,35 @@ def register_details(request):
       phone_number_alt = phone_number.replace('+940', '+94', 1)
       print(phone_number_alt)
 
-    # Update the query to look for either version of the phone number
-    existing_number = user_collection.find_one({
-        "$or": [
-            {"Mobile_Number": phone_number},
-            {"Mobile_Number": phone_number_alt}
-        ]
-    })
-    existing_nic = user_collection.find_one({"NIC": nic})
-    if existing_number or existing_nic:
-      print('user already exists')
-      # If a user exists, return a response indicating the user is already registered
-      return Response(status=409, data={'message': 'User is already registered'})
+    if 'NIC' in registration_data:
+      # Update the query to look for either version of the phone number
+      existing_number = user_collection.find_one({
+          "$or": [
+              {"Mobile_Number": phone_number},
+              {"Mobile_Number": phone_number_alt}
+          ]
+      })
+      existing_nic = user_collection.find_one({"NIC": nic})
+      if existing_number or existing_nic:
+        print('user already exists')
+        # If a user exists, return a response indicating the user is already registered
+        return Response(status=409, data={'message': 'User is already registered'})
 
 
-    # If no existing user is found, sends the otp
-    verification = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
-        .verifications \
-        .create(to=phone_number, channel='sms')
+      # If no existing user is found, sends the otp
+      verification = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
+          .verifications \
+          .create(to=phone_number, channel='sms')
 
-    print(full_name)
-    print(nic)
-    print(phone_number)
-    
-    return Response(status=200, data={'message': 'OTP sent successfully'})  
+      # print(full_name)
+      # print(nic)
+      # print(phone_number)
+      
+      return Response(status=200, data={'message': 'OTP sent successfully'}) 
+    else:
+      verification = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
+          .verifications \
+          .create(to=phone_number, channel='sms')
+      return Response(status=200, data={'message': 'OTP resend successfull'})
 
 
