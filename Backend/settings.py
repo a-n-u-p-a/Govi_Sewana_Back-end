@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'yieldPrediction',
     'login',
     'signup',
+    'userProfile',
+    'yieldPrediction',
     'cropRecommendation',
+    'pricePrediction',
 ]
 
 MIDDLEWARE = [
