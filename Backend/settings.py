@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'yieldPrediction',
     'login',
+    'signup',
 ]
 
 MIDDLEWARE = [
@@ -93,9 +94,9 @@ DATABASES = {
 }
 
 
-TWILIO_ACCOUNT_SID = 'AC7c819aeb127124915fbbd1bca63d6c39'
-TWILIO_AUTH_TOKEN = 'b24b5274317129cfa132484d99cab950'
-TWILIO_VERIFY_SERVICE_ID = 'VAb3078c28c765c1fc03a58060fe157cef'
+TWILIO_ACCOUNT_SID = 'ACbe6af0fd6be7fa3f3dc62b9f0a43d77d'
+TWILIO_AUTH_TOKEN = 'efbef82a213d1fbc50b7e5b7c3042617'
+TWILIO_VERIFY_SERVICE_ID = 'VA814643d8c0abd32639345a32a5359e3b'
 
 
 # Password validation
