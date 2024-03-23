@@ -1,7 +1,5 @@
-from django.shortcuts import render, redirect
 from django.conf import settings
 from twilio.rest import Client
-from django.http import HttpResponse
 from .models import user_collection
 
 from rest_framework.decorators import api_view
@@ -45,7 +43,6 @@ def send_otp(request):
         .create(to=phone_number, channel='sms')
       print(user_collection.get)
       return Response(status=200, data={'message': 'OTP sent successfully', 'Username': username})
-      print(phone_number_alt)
     else:
       return Response(status=409, data={'message': 'User not found'})
 
