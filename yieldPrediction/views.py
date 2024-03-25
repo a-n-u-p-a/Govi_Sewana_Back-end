@@ -70,6 +70,7 @@ def yieldPredictor(request):
                 # Make predictions on the scaled new data
                 new_predictions = pm.make_predictions(scaled_new_data, model)
             else:
+                recorded_extent = 0
                 new_predictions = [0]
 
             # Add and update data to Json object
