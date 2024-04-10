@@ -97,9 +97,9 @@ DATABASES = {
 }
 
 
-TWILIO_ACCOUNT_SID = 'AC93a97ad3656b97eb2b5a349df946d0e0'
-TWILIO_AUTH_TOKEN = '91a0c6a90042849d47ee182cd8bc9dd4'
-TWILIO_VERIFY_SERVICE_ID = 'VA20e5ec57174775d48ffeca3cb476eb2e'
+TWILIO_ACCOUNT_SID = '###################'
+TWILIO_AUTH_TOKEN = '##################'
+TWILIO_VERIFY_SERVICE_ID = '##################'
 
 
 # Password validation
